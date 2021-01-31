@@ -11,4 +11,8 @@ public enum EEffectType
     MoveSpeed,
 
     AttackFrequency,
+
+    MaxHP,
+
+    ThankYou,
 }

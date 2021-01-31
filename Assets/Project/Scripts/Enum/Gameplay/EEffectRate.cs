@@ -4,6 +4,8 @@ using UnityEngine;
 
 public enum EEffectRate
 {
+    None = -999,
+
     StrongDebuff = -100,
 
     NormalDebuff = -50,
@@ -17,4 +19,6 @@ public enum EEffectRate
     NormalBuff = 50,
 
     StrongBuff = 100,
+
+    ThankYou,
 }

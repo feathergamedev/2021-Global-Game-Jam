@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,30 +10,33 @@ public class GameManager : MonoBehaviour
 
     public StageManager Stage;
 
-    [SerializeField] private EEffectType curSelectType;
-    [SerializeField] private EEffectRate curSelectRate;
+    [SerializeField] private Text gameTimerText;
+    private float gameTimer;
 
     private void Awake()
     {
         instance = this;
     }
 
+    private void Start()
+    {
+        Init();
+    }
+
     public void Init()
     {
-        Stage.LoadStage(0);
+        gameTimer = 0;
+
+        LoadStage(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            var myAnswer = ScriptableObject.CreateInstance<Potion>();
-            myAnswer.Type = curSelectType;
-            myAnswer.Rate = curSelectRate;
-                //new Potion(curSelectType, curSelectRate);
-            CheckAnswer(myAnswer);
-        }
+        gameTimer += Time.deltaTime;
+
+        TimeSpan span = TimeSpan.FromSeconds((double)gameTimer);
+        gameTimerText.text = $"{span.ToString("ss\\.fff")}";
     }
 
     public void LoadStage(int stageIndex)
@@ -42,5 +47,16 @@ public class GameManager : MonoBehaviour
     public void CheckAnswer(Potion potion)
     {
         var isCorrect = Stage.CheckAnswer(potion);
+
+        if (isCorrect)
+        {
+            StageManager.instance.LoadNextStage();
+            SoundManager.instance.PlaySFX(SFXType.Correct);
+        }
+        else
+        {
+            LabelManager.instance.DisposeCurrentPiece();
+            SoundManager.instance.PlaySFX(SFXType.Wrong);
+        }
     }
 }

@@ -9,7 +9,17 @@ public class Potion : ScriptableObject
     public EEffectType Type;
     public EEffectRate Rate;
 
-    public Potion(EEffectType type, EEffectRate rate)
+    public void Set(EEffectType type)
+    {
+        this.Type = type;
+    }
+
+    public void Set(EEffectRate rate)
+    {
+        this.Rate = rate;
+    }
+
+    public void Set(EEffectType type, EEffectRate rate)
     {
         this.Type = type;
         this.Rate = rate;

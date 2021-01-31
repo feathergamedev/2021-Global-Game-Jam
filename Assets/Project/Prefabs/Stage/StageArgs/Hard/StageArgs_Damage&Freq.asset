@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b809b8d519124f199593e0b386db8ea, type: 3}
+  m_Name: StageArgs_Damage&Freq
+  m_EditorClassIdentifier: 
+  PlayerInitPos: {x: -12, y: 0, z: 0}
+  Answer: {fileID: 11400000, guid: 832f25a78eb87490882a304440538578, type: 2}
+  potionCandidates:
+  - {fileID: 11400000, guid: 10bc263538a7746519690adcbc083021, type: 2}
+  - {fileID: 11400000, guid: 98094a81d65c04ec495c3cdd017bbfab, type: 2}
+  - {fileID: 11400000, guid: 832f25a78eb87490882a304440538578, type: 2}
+  - {fileID: 11400000, guid: 6412db8a79dfd4fa597b1d85f526b197, type: 2}
+  effectTypeCandidates: 
+  effectRateCandidates: 
