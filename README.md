@@ -1,6 +1,6 @@
 # 2021 Global Game Jam
  
-#PUI (Potion Unfold Inc)
+## PUI (Potion Unfold Inc)
 
 This is my game project for GGJ21.
 
